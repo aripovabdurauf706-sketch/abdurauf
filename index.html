@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLine</title>
+</head>
+<body>
+    <p></p> 
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFolio — Портфолио для поступления</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        <span class="logo-icon">U</span>
+        <span>UniFolio</span>
+    </div>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#universities">Университеты</a>
+        <a href="#applications">Заявки</a>
+    </nav>
+
+    <button class="header-btn" onclick="scrollToSection('portfolio')">
+        Создать портфолио
+    </button>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🎓 Smart admission platform
+        </div>
+
+        <h1>
+            Одно портфолио.
+            <span>Много университетов.</span>
+        </h1>
+
+        <p>
+            Создай своё академическое портфолио один раз
+            и подготовь заявки для нескольких зарубежных университетов
+            в одном месте.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn" onclick="scrollToSection('portfolio')">
+                Создать портфолио →
+            </button>
+
+            <button class="secondary-btn" onclick="scrollToSection('universities')">
+                Посмотреть университеты
+            </button>
+        </div>
+
+        <div class="stats">
+            <div>
+                <strong>1</strong>
+                <span>портфолио</span>
+            </div>
+
+            <div>
+                <strong>∞</strong>
+                <span>заявок</span>
+            </div>
+
+            <div>
+                <strong>24/7</strong>
+                <span>доступ</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-card">
+
+        <div class="window-top">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="profile-mini">
+
+            <div class="avatar">
+                A
+            </div>
+
+            <div>
+                <h3 id="heroName">Your Name</h3>
+                <p>Future International Student</p>
+            </div>
+
+        </div>
+
+        <div class="progress-title">
+            <span>Портфолио</span>
+            <span id="progressText">0%</span>
+        </div>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <div class="mini-items">
+
+            <div>✓ Personal information</div>
+            <div>✓ Education</div>
+            <div>✓ Achievements</div>
+            <div>○ Documents</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+
+    <div class="section-heading">
+        <span class="section-label">01 / PORTFOLIO</span>
+
+        <h2>
+            Создай своё портфолио
+        </h2>
+
+        <p>
+            Заполни информацию один раз. В дальнейшем её можно использовать
+            для разных заявок.
+        </p>
+    </div>
+
+
+    <div class="portfolio-grid">
+
+        <div class="form-card">
+
+            <h3>Личная информация</h3>
+
+            <div class="form-grid">
+
+                <div class="input-group">
+                    <label>Имя</label>
+                    <input id="firstName" type="text" placeholder="Абдурауф">
+                </div>
+
+                <div class="input-group">
+                    <label>Фамилия</label>
+                    <input id="lastName" type="text" placeholder="Артиков">
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input id="email" type="email" placeholder="example@email.com">
+                </div>
+
+                <div class="input-group">
+                    <label>Страна</label>
+                    <input id="country" type="text" placeholder="Tajikistan">
+                </div>
+
+                <div class="input-group full">
+                    <label>Желаемая специальность</label>
+                    <input id="major" type="text" placeholder="Computer Science">
+                </div>
+
+                <div class="input-group full">
+                    <label>О себе</label>
+                    <textarea id="about" rows="5"
+                    placeholder="Расскажи о себе, своих интересах и целях..."></textarea>
+                </div>
+
+            </div>
+
+            <button class="primary-btn save-btn" onclick="saveProfile()">
+                Сохранить профиль
+            </button>
+
+        </div>
+
+
+        <div class="preview-card">
+
+            <div class="preview-header">
+                <span>PREVIEW</span>
+                <span class="online">● LIVE</span>
+            </div>
+
+            <div class="preview-avatar" id="previewAvatar">
+                A
+            </div>
+
+            <h2 id="previewName">
+                Your Name
+            </h2>
+
+            <p id="previewMajor">
+                Your future major
+            </p>
+
+            <div class="preview-line"></div>
+
+            <div class="preview-info">
+                <div>
+                    <span>COUNTRY</span>
+                    <strong id="previewCountry">—</strong>
+                </div>
+
+                <div>
+                    <span>EMAIL</span>
+                    <strong id="previewEmail">—</strong>
+                </div>
+            </div>
+
+            <div class="preview-about" id="previewAbout">
+                Здесь появится информация о тебе.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- EDUCATION -->
+    <div class="extra-card">
+
+        <div>
+            <span class="section-label">EDUCATION</span>
+            <h3>Образование</h3>
+        </div>
+
+        <div id="educationList"></div>
+
+        <button class="outline-btn" onclick="addEducation()">
+            + Добавить образование
+        </button>
+
+    </div>
+
+
+    <!-- ACHIEVEMENTS -->
+    <div class="extra-card">
+
+        <div>
+            <span class="section-label">ACHIEVEMENTS</span>
+            <h3>Достижения</h3>
+        </div>
+
+        <div id="achievementList"></div>
+
+        <button class="outline-btn" onclick="addAchievement()">
+            + Добавить достижение
+        </button>
+
+    </div>
+
+
+    <!-- PROJECTS -->
+    <div class="extra-card">
+
+        <div>
+            <span class="section-label">PROJECTS</span>
+            <h3>Проекты</h3>
+        </div>
+
+        <div id="projectList"></div>
+
+        <button class="outline-btn" onclick="addProject()">
+            + Добавить проект
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- UNIVERSITIES -->
+<section id="universities" class="section dark-section">
+
+    <div class="section-heading">
+        <span class="section-label">02 / UNIVERSITIES</span>
+
+        <h2>
+            Выбери университеты
+        </h2>
+
+        <p>
+            Добавь университеты, для которых хочешь подготовить заявки.
+        </p>
+    </div>
+
+
+    <div class="university-grid">
+
+        <div class="university-card">
+            <div class="uni-logo">MIT</div>
+            <h3>MIT</h3>
+            <p>Massachusetts Institute of Technology</p>
+
+            <span class="location">🇺🇸 USA</span>
+
+            <button onclick="toggleUniversity(this, 'MIT')">
+                + Добавить
+            </button>
+        </div>
+
+
+        <div class="university-card">
+            <div class="uni-logo">ST</div>
+            <h3>Stanford University</h3>
+            <p>Stanford University</p>
+
+            <span class="location">🇺🇸 USA</span>
+
+            <button onclick="toggleUniversity(this, 'Stanford University')">
+                + Добавить
+            </button>
+        </div>
+
+
+        <div class="university-card">
+            <div class="uni-logo">OX</div>
+            <h3>Oxford</h3>
+            <p>University of Oxford</p>
+
+            <span class="location">🇬🇧 UK</span>
+
+            <button onclick="toggleUniversity(this, 'University of Oxford')">
+                + Добавить
+            </button>
+        </div>
+
+
+        <div class="university-card">
+            <div class="uni-logo">CMU</div>
+            <h3>Carnegie Mellon</h3>
+            <p>Carnegie Mellon University</p>
+
+            <span class="location">🇺🇸 USA</span>
+
+            <button onclick="toggleUniversity(this, 'Carnegie Mellon University')">
+                + Добавить
+            </button>
+        </div>
+
+
+        <div class="university-card">
+            <div class="uni-logo">UCL</div>
+            <h3>UCL</h3>
+            <p>University College London</p>
+
+            <span class="location">🇬🇧 UK</span>
+
+            <button onclick="toggleUniversity(this, 'University College London')">
+                + Добавить
+            </button>
+        </div>
+
+
+        <div class="university-card">
+            <div class="uni-logo">ETH</div>
+            <h3>ETH Zürich</h3>
+            <p>ETH Zürich</p>
+
+            <span class="location">🇨🇭 Switzerland</span>
+
+            <button onclick="toggleUniversity(this, 'ETH Zürich')">
+                + Добавить
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- APPLICATIONS -->
+<section id="applications" class="section">
+
+    <div class="section-heading">
+        <span class="section-label">03 / APPLICATIONS</span>
+
+        <h2>
+            Мои заявки
+        </h2>
+
+        <p>
+            Здесь будут отображаться университеты, для которых ты подготовил заявку.
+        </p>
+    </div>
+
+
+    <div id="applicationsList" class="applications-list">
+
+        <div class="empty-state">
+            <div>🎓</div>
+            <h3>Пока нет заявок</h3>
+            <p>Выбери университет выше, чтобы создать заявку.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DOCUMENTS -->
+<section class="section document-section">
+
+    <div class="document-box">
+
+        <div>
+            <span class="section-label">04 / EXPORT</span>
+
+            <h2>
+                Готово к отправке
+            </h2>
+
+            <p>
+                Когда портфолио заполнено, сформируй файл для дальнейшей подачи
+                документов.
+            </p>
+        </div>
+
+        <div class="export-buttons">
+
+            <button class="primary-btn" onclick="exportPortfolio()">
+                📄 Экспортировать портфолио
+            </button>
+
+            <button class="secondary-btn" onclick="clearData()">
+                Очистить данные
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="logo">
+        <span class="logo-icon">U</span>
+        UniFolio
+    </div>
+
+    <p>
+        Smart portfolio platform for international applicants.
+    </p>
+
+    <span>
+        © 2026 UniFolio
+    </span>
+
+</footer>
+
+
+<div id="toast" class="toast">
+    Сохранено ✓
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
